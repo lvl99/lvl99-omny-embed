@@ -1,12 +1,13 @@
 # LVL99 Omny Embed
 
 Author: Matt Scheurich <matt@lvl99.com>
+
 Repo: [http://www.github.com/lvl99/lvl99-omny-embed](http://www.github.com/lvl99/lvl99-omny-embed)
 
 
 ## Description
 
-Easily embed media hosted on Omny within your WordPress site. Supports omnyapp.com and omnycontent.com URLs and the `[omny]` shortcode.
+Easily embed media hosted on [Omny](http://www.omnyapp.com) within your WordPress site. Supports _omnyapp.com_ and _omnycontent.com_ URLs and the `[omny]` shortcode.
 
 
 ## Installation
@@ -26,8 +27,8 @@ The `..` within the shortcode is space for you to put in alternative content if 
 
 These are the available `[omny]` attributes/options:
 
- * `url`: The URL to the media on Omny (located on *omnyapp.com* domain)
- * `embedUrl`: The URL to the embedded media player on Omny (located on *omnycontent.com* domain)
+ * `url`: The URL to the media on Omny (located on _omnyapp.com_ domain)
+ * `embedUrl`: The URL to the embedded media player on Omny (located on _omnycontent.com_ domain)
  * `width`: Width of embed; available as percentage, e.g. `100%`, or pixels, e.g. `150`
  * `height`: Height of embed; available as percentage, e.g. `100%`, or pixels, e.g. `150`
  * `orgId`: The ID of the organisation on Omny, e.g. `65cc671a-66e3-45dc-98f3-a50200547d4e`
@@ -42,7 +43,7 @@ These are the available `[omny]` attributes/options:
 
 ```
 [omny orgId="65cc671a-66e3-45dc-98f3-a50200547d4e" programId="7d59c4ff-f533-4daf-8005-a506000c2c15" clipId="a8917ca7-e171-48a2-b4fb-a57200bf0b80" url="http://omnyapp.com/shows/thinkergirl-the-podcast/the-summer-sessions-kristies-edition-thinkergirl-t"]
-Check out our latest podcast at &lt;a href="http://omnyapp.com/shows/thinkergirl-the-podcast/the-summer-sessions-kristies-edition-thinkergirl-t"&gt;http://omnyapp.com/shows/thinkergirl-the-podcast/the-summer-sessions-kristies-edition-thinkergirl-t&lt;/a&gt;
+Check out our latest podcast at <a href="http://omnyapp.com/shows/thinkergirl-the-podcast/the-summer-sessions-kristies-edition-thinkergirl-t">http://omnyapp.com/shows/thinkergirl-the-podcast/the-summer-sessions-kristies-edition-thinkergirl-t</a>
 [/omny]
 ```
 
