@@ -800,7 +800,20 @@ if ( class_exists('LVL99_Plugin') && !class_exists( 'LVL99_Omny_Embed' ) )
     */
     public function shortcode_omny ( $atts, $content = '' )
     {
-      $omny_info = shortcode_atts( self::$default_omny_info, $atts );
+      $embed_html = '';
+      $omny_info = self::$default_omny_info;
+
+      // Merge $atts to $omny_info
+      foreach( $omny_info as $key => $value )
+      {
+        $check_key = strtolower($key);
+        if ( isset($atts[$check_key]) )
+        {
+          $omny_info[$key] = $atts[$check_key];
+        }
+      }
+
+      // Set content
       $omny_info['content'] = $content;
 
       // No embed URL? Generate one (as long as omny IDs are available)
@@ -810,10 +823,10 @@ if ( class_exists('LVL99_Plugin') && !class_exists( 'LVL99_Omny_Embed' ) )
       }
 
       // No omny IDs? Extract from the embed url
-      // if ( (empty($omny_info['orgId']) || empty($omny_info['programId']) || empty($omny_info['clipId'])) && !empty($omny_info['embedUrl']) )
-      // {
-      //   $this->extract_omny_ids_from_embed_url( $omny_info['embedUrl'], $omny_info );
-      // }
+      if ( (empty($omny_info['orgId']) || empty($omny_info['programId']) || empty($omny_info['clipId'])) && !empty($omny_info['embedUrl']) )
+      {
+        $this->extract_omny_ids_from_embed_url( $omny_info['embedUrl'], $omny_info );
+      }
 
       // Error on missing info
       if ( empty($omny_info['url']) && ( empty($omny_info['embedUrl']) || ( empty($omny_info['orgId']) || empty($omny_info['programId']) || empty($omny_info['clipId']) ) ) )
@@ -823,7 +836,7 @@ if ( class_exists('LVL99_Plugin') && !class_exists( 'LVL99_Omny_Embed' ) )
         return '<!-- LVL99 Omny Embed: [omny] missing important information and can\'t render -->';
 
       } else {
-        $embed_html = $this->build_omny_embed_html( $omny_info );
+        $embed_html .= $this->build_omny_embed_html( $omny_info );
         return $embed_html;
       }
     }
