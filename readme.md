@@ -7,7 +7,7 @@ Repo: [http://www.github.com/lvl99/lvl99-omny-embed](http://www.github.com/lvl99
 
 ## Description
 
-Easily embed media hosted on [Omny](http://www.omnyapp.com) within your WordPress site. Supports _omnyapp.com_ and _omnycontent.com_ URLs and the `[omny]` shortcode.
+Easily embed media hosted on [Omny](http://www.omnyapp.com) within your WordPress site. Supports **omnyapp.com** and **omnycontent.com** URLs and the `[omny]` shortcode.
 
 
 ## Installation
