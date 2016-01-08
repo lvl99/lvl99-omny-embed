@@ -403,9 +403,9 @@ if ( class_exists('LVL99_Plugin') && !class_exists( 'LVL99_Omny_Embed' ) )
     public function fetch_omny_info_from_url ( $url )
     {
       $url = trim($url);
-      
+
       // The default media info array to return
-      $omny_info = array_merge( array(), LVL99_Omny_Embed::$default_omny_info );
+      $omny_info = array_merge( array(), self::$default_omny_info );
       $omny_info['url'] = $url;
 
       $omny_info = apply_filters( $this->textdomain . '/pre_fetch_omny_info_from_url', $omny_info, $url );
@@ -523,7 +523,7 @@ if ( class_exists('LVL99_Plugin') && !class_exists( 'LVL99_Omny_Embed' ) )
     */
     public function build_omny_embed_html ( $omny_info = array() )
     {
-      $omny_info = array_merge( array(), LVL99_Omny_Embed::$default_omny_info, $omny_info );
+      $omny_info = array_merge( array(), self::$default_omny_info, $omny_info );
       $embed_html = '';
 
       if ( $this->get_option('renderonserver') == 'on' )
@@ -579,7 +579,7 @@ if ( class_exists('LVL99_Plugin') && !class_exists( 'LVL99_Omny_Embed' ) )
     */
     public function build_omny_shortcode ( $omny_info = array(), $content = '' )
     {
-      $omny_info = array_merge( array(), LVL99_Omny_Embed::$default_omny_info, $omny_info );
+      $omny_info = array_merge( array(), self::$default_omny_info, $omny_info );
       $shortcode_text = '';
 
       // Attempt to get information from the standard URL
@@ -800,7 +800,7 @@ if ( class_exists('LVL99_Plugin') && !class_exists( 'LVL99_Omny_Embed' ) )
     */
     public function shortcode_omny ( $atts, $content = '' )
     {
-      $omny_info = shortcode_atts( LVL99_Omny_Embed::default_omny_info, $atts );
+      $omny_info = shortcode_atts( self::$default_omny_info, $atts );
       $omny_info['content'] = $content;
 
       // No embed URL? Generate one (as long as omny IDs are available)
